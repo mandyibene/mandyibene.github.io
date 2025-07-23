@@ -14,8 +14,8 @@ interface BurgerIconProps {
 
 function BurgerCrossButton({ responsive, position, color, isIconBurger, clickedOnce, onClick }: BurgerIconProps) {
 
-  let strokeSize = 'h-[3px]';
-  let strokeClassName = `${color} ${strokeSize} rounded-full w-full transition duration-500`;
+  const strokeSize = 'h-[3px]';
+  const strokeClassName = `${color} ${strokeSize} rounded-full w-full transition duration-500`;
 
   return (
     <button onClick={() => onClick()} className={`${responsive} ${position} group w-10 h-10 flex flex-col gap-3 cursor-pointer`}>

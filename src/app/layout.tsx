@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { jetBrainsMono } from "@/constants/Fonts";
 import "./globals.css";
 import Body from "@/components/Body";
+import { ThemeContextProvider } from "./context/themeContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,9 +17,11 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${jetBrainsMono.className}`}>
-      <Body>
-        {children}
-      </Body>
+      <ThemeContextProvider>
+        <Body>
+          {children}
+        </Body>
+      </ThemeContextProvider>
     </html>
   );
 }
