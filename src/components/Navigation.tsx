@@ -30,9 +30,9 @@ function Navigation() {
   
   const navClassName = `flex`;
   
-  const liClassName = `p-2 ${textColors[color3]} opacity-100 rounded-xs ${hoverTextColors[color2]} ${hoverBgColors[color1]} dark:text-stone-50 dark:bg-zinc-800 dark:hover:text-zinc-800 dark:hover:bg-stone-50`;
+  const liClassName = `opacity-100 rounded-xs ${hoverBgColors[color1]}   dark:hover:bg-stone-50`;
   
-  const linkClassName = `block uppercase font-semibold text-2xl lg:text-lg`;
+  const linkClassName = `block p-2 uppercase font-semibold text-2xl lg:text-lg ${textColors[color3]} dark:text-stone-50 ${hoverTextColors[color2]} dark:hover:text-zinc-800`;
   
   const ulWrapperClassName = `absolute top-0 -right-[100vw] flex flex-col justify-center items-center bg-stone-300/50 backdrop-blur-sm w-screen h-screen lg:size-auto p-4 rounded-xs ${!isMenuClosed && '-translate-x-[100vw]'} lg:top-8 lg:right-1/2 lg:translate-x-1/2 transition-transform duration-500  `
   const ulClassName = `flex flex-col lg:flex-row justify-center items-center size-[40%] lg:size-auto gap-4 lg:gap-0 bg-stone-50 dark:bg-zinc-800 rounded-xs`;

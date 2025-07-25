@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+*My Portfolio* is a website which aims to showcase my work and overall skills to let others know more about myself.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ideally, I want the website to include a homepage with my skills and projects displayed as well as links to my LinkedIn and Github. It will basically be a landing page, although I will likely add some pages (for little projects that do not need to have a dedicated website for exemple).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The design will be simple but I will make it user friendly, appealing and interactive so I can showcase the most of my frontend skills. To demonstrate my proficiency on the backend side, I plan on using APIs for small projects that will be displayed on the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Languages
+- **JavaScript**: add interactivity, flexible, work in frontend and backend
+- **Typescript**: better code completion and error detection
+- **CSS**: a little bit of custom styles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Package manager
+- **npm**: tp manage dependencies, huge library 
 
-## Learn More
+### Frameworks
+- **React**: fast, clear, huge doc and community
+- **Next.js**: built-in features for routing, APIs, SSR...
+- **Tailwind**: easy responsive, create customs designs quickly
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **header** (common to all pages)
+  - [x] my name / logo?
+  - [x] navigation on large screens
+  - [x] hidden side navigation on small screens
+- **homepage pt.1 : build the minimum**
+  - section 1
+    - [ ] name, job
+    - [ ] quick intro
+    - [ ] links to LinkedIn and GitHub
+  - section 2
+    - [ ] list of languages, frameworks, ...
+  - section 3
+    - [ ] projects presentation with links to projects ([Gère Ton École](https://geretonecole.fr/))
+- **homepage pt.2 : adding images and simple styling**
+  - [ ] icons and simple styling for socials
+  - [ ] icons and simple styling for languages, frameworks
+  - [ ] images and simple styling for projects
+- **homepage pt.3 : adding movement and interactivity**
+  - [x] light/dark mode
+  - [ ] sections fading in when scrolling
+  - [ ] scrollbar with jump-to section??
+  - [ ] others??
