@@ -21,6 +21,18 @@ The design will be simple but I will make it user friendly, appealing and intera
 - **Next.js**: built-in features for routing, APIs, SSR...
 - **Tailwind**: easy responsive, create customs designs quickly
 
+### Linter
+- **ESLint**: already bundled in the base configuration, flexible, works with JS, JSX and TypeScript
+
+
+## Installation
+
+    # new react app
+    npx create-next-app@latest
+    
+    # run development mode
+    npm run dev
+
 
 ## Roadmap
 
@@ -45,4 +57,5 @@ The design will be simple but I will make it user friendly, appealing and intera
   - [x] light/dark mode
   - [ ] sections fading in when scrolling
   - [ ] scrollbar with jump-to section??
+  - [ ] logo maybe
   - [ ] others??

@@ -28,6 +28,14 @@ body {
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+
+  /* responsive */
+  --breakpoint-3xl: 112rem;
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xs: 20rem;
+
+
+  /* animations for burger icon */
   --animate-burger-to-cross-1: wiggle-rotate .5s forwards;
   --animate-cross-to-burger-1: reverse-wiggle-rotate .5s forwards;
   --animate-burger-to-cross-2: wiggle-rotate-counter-clockwise .5s forwards;
