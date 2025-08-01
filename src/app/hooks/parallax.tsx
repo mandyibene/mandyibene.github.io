@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+/**
+ * Makes reffered element appear only when intersecting with viewport
+ */
 export const useIsVisible = (ref: React.RefObject<HTMLDivElement | HTMLHeadingElement | null>) => {
   const [isIntersecting, setIntersecting] = useState(false);
   const [hasAppeared, setHasAppeared] = useState(false);

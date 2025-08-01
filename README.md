@@ -14,7 +14,7 @@ The design will be simple but I will make it user friendly, appealing and intera
 - **CSS**: a little bit of custom styles
 
 ### Package manager
-- **npm**: tp manage dependencies, huge library 
+- **npm**: to manage dependencies, huge library 
 
 ### Frameworks
 - **React**: fast, clear, huge doc and community
@@ -25,12 +25,12 @@ The design will be simple but I will make it user friendly, appealing and intera
 - **ESLint**: already bundled in the base configuration, flexible, works with JS, JSX and TypeScript
 
 
-## Installation
+## Install and run the project
 
-    # new react app
-    npx create-next-app@latest
-    
-    # run development mode
+    # install dependencies
+    npm install
+
+    # run in development mode
     npm run dev
 
 
@@ -42,13 +42,12 @@ The design will be simple but I will make it user friendly, appealing and intera
   - [x] hidden side navigation on small screens
 - **homepage pt.1 : build the minimum**
   - section 1
-    - [ ] name, job
-    - [ ] quick intro
-    - [ ] links to LinkedIn and GitHub
+    - [x] name, job
+    - [x] links to LinkedIn and GitHub
   - section 2
-    - [ ] list of languages, frameworks, ...
+    - [x] list of languages, frameworks, ...
   - section 3
-    - [ ] projects presentation with links to projects ([Gère Ton École](https://geretonecole.fr/))
+    - [x] projects presentation with links to projects ([Gère Ton École](https://geretonecole.fr/))
 - **homepage pt.2 : adding images and simple styling**
   - [ ] icons and simple styling for socials
   - [ ] icons and simple styling for languages, frameworks

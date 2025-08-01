@@ -12,6 +12,9 @@ interface BurgerIconProps {
   onClick: () => void;
 }
 
+/**
+ * Button switching appearance between burger and cross when clicking on it
+ */
 function BurgerCrossButton({ responsive, position, color, isIconBurger, clickedOnce, onClick }: BurgerIconProps) {
 
   const strokeSize = 'h-[3px]';
