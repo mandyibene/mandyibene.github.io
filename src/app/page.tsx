@@ -1,10 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { useIsVisible } from "./hooks/parallax";
 import Section from "@/components/Section";
+import { BootstrapLogo, CssLogo, GithubLogo, GitLogo, HtmlLogo, JavascriptLogo, LinkedinLogo, MysqlLogo, NextjsLogo, NodejsLogo, PhpLogo, PostgresqlLogo, PythonLogo, ReactLogo, SqlLogo, SymfonyLogo, TailwindLogo, TypescriptLogo } from "@/components/icons";
+import { ThemeContext, ThemeContextType } from "./context/themeContext";
 
 export default function Home() {
+
+  const { darkMode } = useContext(ThemeContext) as ThemeContextType;
   
   const ref1 = useRef<HTMLHeadingElement>(null);
   const isVisible1 = useIsVisible(ref1);
@@ -25,14 +29,20 @@ export default function Home() {
         </h1>
         <span className="mt-4 xs:mt-6 md:mt-8 text-center xs:text-2xl md:text-4xl">Développeuse web</span>
         <div className="flex flex-row gap-16 mt-16">
-          <a href="https://linkedin.com/in/mandy-ibene" target="_blank">LinkedIn</a>
-          <a href="https://github.com/mandyibene" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/mandy-ibene" target="_blank" className="flex flex-row gap-4 items-center">
+            <LinkedinLogo width={40} height={40}  />
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/mandyibene" target="_blank" className="flex flex-row gap-4 items-center">
+            <GithubLogo fill={`${darkMode ? "#FAFBFC" : '#1B1F24'}`} width={40} height={40} />
+            <span>GitHub</span>
+          </a>
         </div>
       </Section>
 
       {/* skills */}
       <Section contrast>
-        <ul className="w-full">
+        {/* <ul className="w-full">
           <li>HTML</li>
           <li>CSS, Sass, Tailwind, Bootstrap</li>
           <li>JavaScript, TypeScript, React, Node</li>
@@ -43,7 +53,32 @@ export default function Home() {
           <li>Wordpress</li>
           <li>C++, Python, Java</li>
           <li>VS Code</li>
-        </ul>
+        </ul> */}
+        <div className="w-full flex flex-row justify-around gap-16 mb-16">
+          <HtmlLogo fill="white" />
+          <CssLogo fill="white" />
+          <TailwindLogo />
+          <BootstrapLogo />
+        </div>
+        <div className="w-full flex flex-row justify-around gap-16 mb-16">
+          <JavascriptLogo />
+          <TypescriptLogo />
+          <ReactLogo />
+          <NextjsLogo />
+        </div>
+        <div className="w-full flex flex-row justify-around gap-16 mb-16">
+          <NodejsLogo />
+          <PhpLogo />
+          <SymfonyLogo />
+          <SqlLogo />
+        </div>
+        <div className="w-full flex flex-row justify-around gap-16">
+          <PostgresqlLogo />
+          <MysqlLogo />
+          <GitLogo />
+          <GithubLogo fill="#FAFBFC" />
+          <PythonLogo />
+        </div>
       </Section>
       
       {/* projects */}

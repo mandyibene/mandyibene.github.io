@@ -14,7 +14,7 @@ export default function Body({
 
   return (
     
-    <body className={`${darkMode && 'dark'} pt-[140px] transition-colors duration-200 text-zinc-800 dark:text-stone-50 bg-stone-50 dark:bg-zinc-800 `}>
+    <body className={`${darkMode && 'dark'} pt-[140px] transition-colors duration-200 text-zinc-800 dark:text-stone-50 bg-stone-50 dark:bg-zinc-900 `}>
       <Header />
       {children}
     </body>
