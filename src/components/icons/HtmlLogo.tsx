@@ -7,8 +7,9 @@ const SvgHtmlLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
-    width={props.width || 80}
-    height={props.height || 80}
+    width={props.width || 70}
+    height={props.height || 70}
+    className={props.className || ""}
     {...props}
   >
     <path d="M108.4 0h23v22.8h21.2V0h23v69h-23V46h-21v23h-23.2M206 23h-20.3V0h63.7v23H229v46h-23m53.5-69h24.1l14.8 24.3L313.2 0h24.1v69h-23V34.8l-16.1 24.8-16.1-24.8V69h-22.6m89.2-69h23v46.2h32.6V69h-55.6" />

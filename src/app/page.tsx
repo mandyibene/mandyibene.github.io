@@ -1,34 +1,47 @@
 "use client";
 
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useIsVisible } from "./hooks/parallax";
 import Section from "@/components/Section";
 import { BootstrapLogo, CssLogo, GithubLogo, GitLogo, HtmlLogo, JavascriptLogo, LinkedinLogo, MysqlLogo, NextjsLogo, NodejsLogo, PhpLogo, PostgresqlLogo, PythonLogo, ReactLogo, SqlLogo, SymfonyLogo, TailwindLogo, TypescriptLogo } from "@/components/icons";
 import { ThemeContext, ThemeContextType } from "./context/themeContext";
+import SkillCategory from "@/components/SkillCategory";
 
 export default function Home() {
 
+  useEffect(() => {
+    let index = 0;
+    for (let letter of job) {
+        index++;
+        setTimeout(() => {
+          setJobSpan((prevState) => prevState + letter);
+        }, index*200);
+    }
+  }, [])
+
   const { darkMode } = useContext(ThemeContext) as ThemeContextType;
+
+  const [jobSpan, setJobSpan] = useState("> ");
+  const job = "Développeuse Web"
   
   const ref1 = useRef<HTMLHeadingElement>(null);
   const isVisible1 = useIsVisible(ref1);
 
-  const h1Text = "Mandy\u00A0Ibéné";
   const h1ClassName = `static mt-12 text-center text-3xl xs:text-5xl md:text-7xl xl:text-8xl font-semibold`;
-  const h1SpanClassname = `inline-block transition transform ease-in duration-300 ${isVisible1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`;
+  
 
   return (
     <main className="relative top-O w-full flex flex-col items-center">
-
       {/* quick intro */}
       <Section>
-        <h1 ref={ref1} className={h1ClassName}>
-          {h1Text.split('').map((charac, i) => {
-            return <span key={`h1-${i}`} className={`${h1SpanClassname}`} style={{ transitionDelay: `${(i + 1) * 10}ms` }}>{charac}</span>
-          })}
-        </h1>
-        <span className="mt-4 xs:mt-6 md:mt-8 text-center xs:text-2xl md:text-4xl">Développeuse web</span>
-        <div className="flex flex-row gap-16 mt-16">
+        <h1 ref={ref1} className={h1ClassName}>Mandy Ibéné</h1>
+
+        <div className="flex flex-row h-[1.5rem] xs:h-[1.75rem] md:h-[2.25rem] mt-4 xs:mt-6 md:mt-8">
+          <h2 className="xs:text-2xl md:text-4xl">{jobSpan}</h2>
+          <div className="w-[2px] md:w-[3px] flex-1 ms-1 animate-caret"></div>
+        </div>
+
+        {/* <div className="flex flex-row gap-16 mt-20">
           <a href="https://linkedin.com/in/mandy-ibene" target="_blank" className="flex flex-row gap-4 items-center">
             <LinkedinLogo width={40} height={40}  />
             <span>LinkedIn</span>
@@ -37,48 +50,40 @@ export default function Home() {
             <GithubLogo fill={`${darkMode ? "#FAFBFC" : '#1B1F24'}`} width={40} height={40} />
             <span>GitHub</span>
           </a>
-        </div>
+        </div> */}
       </Section>
 
       {/* skills */}
       <Section contrast>
-        {/* <ul className="w-full">
-          <li>HTML</li>
-          <li>CSS, Sass, Tailwind, Bootstrap</li>
-          <li>JavaScript, TypeScript, React, Node</li>
-          <li>PHP, Symfony 5</li>
-          <li>SQL, MySQL</li>
-          <li>npm</li>
-          <li>Git, Github</li>
-          <li>Wordpress</li>
-          <li>C++, Python, Java</li>
-          <li>VS Code</li>
-        </ul> */}
-        <div className="w-full flex flex-row justify-around gap-16 mb-16">
+        <SkillCategory name="HTML & CSS" description="Responsive Web Design">
           <HtmlLogo fill="white" />
           <CssLogo fill="white" />
           <TailwindLogo />
           <BootstrapLogo />
-        </div>
-        <div className="w-full flex flex-row justify-around gap-16 mb-16">
+        </SkillCategory>
+        <SkillCategory name="JavaScript" description="Fullstack Development & Interactive Pages">
           <JavascriptLogo />
           <TypescriptLogo />
           <ReactLogo />
           <NextjsLogo />
-        </div>
-        <div className="w-full flex flex-row justify-around gap-16 mb-16">
           <NodejsLogo />
+        </SkillCategory>
+        <SkillCategory name="PHP" description="Fullstack Development">
           <PhpLogo />
           <SymfonyLogo />
+        </SkillCategory>
+        <SkillCategory name="SQL" description="Databases Management">
           <SqlLogo />
-        </div>
-        <div className="w-full flex flex-row justify-around gap-16">
+          <MysqlLogo className="fill-stone-50" />
           <PostgresqlLogo />
-          <MysqlLogo />
+        </SkillCategory>
+        <SkillCategory name="Git" description="Gestion de versions">
           <GitLogo />
-          <GithubLogo fill="#FAFBFC" />
+          <GithubLogo className="fill-stone-50" />
+        </SkillCategory>
+        <SkillCategory name="Other Skills" description="" marginBottom="0">
           <PythonLogo />
-        </div>
+        </SkillCategory>
       </Section>
       
       {/* projects */}
@@ -86,9 +91,7 @@ export default function Home() {
         <div className="flex flex-col w-full">
           <a href="https://geretonecole.fr/" target="_blank">Gère Ton École</a>
           <div className="mt-8">
-            Gère Ton École est une application web dédiée aux différents acteurs de la vie scolaire. Elle a pour vocation d’apporter une solution de suivi et de gestion simple
-            gratuite, et adaptée pour tous les types d'établissements, allant de l’école
-            primaire à l’université.
+            Gère Ton École est une application web dédiée aux différents acteurs de la vie scolaire. Elle a pour vocation d’apporter une solution de suivi et de gestion simple, gratuite et adaptée pour tous les types d'établissements, allant de l’école primaire à l’université.
           </div>
         </div>
       </Section>

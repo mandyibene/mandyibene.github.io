@@ -2,10 +2,10 @@
   "typescript": true,
   "removeViewBox": false,
   "replaceAttrValues": {
-    "none": "{props.fill || `black`}"
   },
   "svgProps": {
-    "width": "{props.width || 80}",
-    "height": "{props.height || 80}"
+    "width": "{props.width || 70}",
+    "height": "{props.height || 70}",
+    "className" : "{props.className || \"\"}"
   }
 }

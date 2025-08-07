@@ -6,9 +6,10 @@ import type { SVGProps } from "react";
 const SvgCssLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={props.width || 80}
-    height={props.height || 80}
+    width={props.width || 70}
+    height={props.height || 70}
     viewBox="0 0 362.734 512"
+    className={props.className || ""}
     {...props}
   >
     <path

@@ -6,10 +6,11 @@ import type { SVGProps } from "react";
 const SvgSymfonyLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={props.width || 80}
-    height={props.height || 80}
+    width={props.width || 70}
+    height={props.height || 70}
     preserveAspectRatio="xMinYMin meet"
     viewBox="0 0 256 257"
+    className={props.className || ""}
     {...props}
   >
     <circle cx={128} cy={128.827} r={128} fill="#1A171B" />

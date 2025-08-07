@@ -14,11 +14,11 @@ The design will be simple but I will make it user friendly, appealing and intera
 - **CSS**: a little bit of custom styles
 
 ### Package manager
-- **npm**: to manage dependencies, huge library 
+- **npm (v9.4.0)**: to manage dependencies, huge library 
 
 ### Frameworks
 - **React**: fast, clear, huge doc and community
-- **Next.js**: built-in features for routing, APIs, SSR...
+- **Next.js (v15.3.0)**: built-in features for routing, APIs, SSR...
 - **Tailwind**: easy responsive, create customs designs quickly
 
 ### Linter
@@ -49,8 +49,8 @@ The design will be simple but I will make it user friendly, appealing and intera
   - section 3
     - [x] projects presentation with links to projects ([Gère Ton École](https://geretonecole.fr/))
 - **homepage pt.2 : adding images and simple styling**
-  - [ ] icons and simple styling for socials
-  - [ ] icons and simple styling for languages, frameworks
+  - [x] icons and simple styling for socials
+  - [x] icons and simple styling for languages, frameworks
   - [ ] images and simple styling for projects
 - **homepage pt.3 : adding movement and interactivity**
   - [x] light/dark mode

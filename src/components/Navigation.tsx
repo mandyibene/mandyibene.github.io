@@ -5,6 +5,7 @@ import BurgerCrossButton from "./BurgerCrossButton";
 import { useContext, useEffect, useState } from "react";
 import { textColors, bgColors, hoverTextColors, hoverBgColors } from "@/constants/Colors";
 import { ThemeContext, ThemeContextType } from "@/app/context/themeContext";
+import { GithubLogo, LinkedinLogo } from "./icons";
 
 function Navigation() {
 
@@ -18,11 +19,11 @@ function Navigation() {
     !clickedOnce && setClickedOnce(!clickedOnce);
   }
 
-  const links: { [key: string]: string } = {
-    link1: "Lien 1",
-    link2: "Lien 2",
-    link3: "Lien 3"
-  }
+  // const links: { [key: string]: string } = {
+  //   link1: "Lien 1",
+  //   link2: "Lien 2",
+  //   link3: "Lien 3"
+  // }
   
   const color1 = "zinc800";
   const color2 = "stone50";
@@ -32,7 +33,10 @@ function Navigation() {
   
   const liClassName = `opacity-100 rounded-xs ${hoverBgColors[color1]}   dark:hover:bg-stone-50`;
   
-  const linkClassName = `block p-2 uppercase font-semibold text-2xl lg:text-lg ${textColors[color3]} dark:text-stone-50 ${hoverTextColors[color2]} dark:hover:text-zinc-900`;
+  const linkClassName = `group block p-2 uppercase font-semibold text-xl lg:text-lg ${textColors[color3]} dark:text-stone-50 ${hoverTextColors[color2]} dark:hover:text-zinc-900`;
+
+  const logoClassName = `fill-zinc-800 group-hover:fill-stone-50 dark:fill-stone-50 dark:group-hover:fill-zinc-800`;
+  const logoSize = 20;
   
   const ulWrapperClassName = `absolute top-0 -right-[100vw] flex flex-col justify-center items-center bg-stone-300/50 backdrop-blur-sm w-screen h-screen lg:size-auto p-4 rounded-xs ${!isMenuClosed && '-translate-x-[100vw]'} lg:top-8 lg:right-1/2 lg:translate-x-1/2 transition-transform duration-500  `
   const ulClassName = `flex flex-col lg:flex-row justify-center items-center size-[40%] lg:size-auto gap-4 lg:gap-0 bg-stone-50 dark:bg-zinc-900 rounded-xs`;
@@ -45,11 +49,23 @@ function Navigation() {
       
       <div className={ulWrapperClassName}>
         <ul className={ulClassName}>
-          {Object.keys(links).map((key, i) => (
+          {/* {Object.keys(links).map((key, i) => (
             <li className={liClassName} key={i}>
               <Link className={linkClassName} href={key}>{links[key]}</Link>
             </li>
-          ))}
+          ))} */}
+          <li className={liClassName}>
+            <a href="https://linkedin.com/in/mandy-ibene" target="_blank" className={`flex flex-row gap-2 items-center ${linkClassName}`}>
+              <LinkedinLogo className={logoClassName} width={logoSize} height={logoSize}  />
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li className={liClassName}>
+            <a href="https://github.com/mandyibene" target="_blank" className={`flex flex-row gap-2 items-center ${linkClassName}`}>
+              <GithubLogo className={logoClassName} width={logoSize} height={logoSize} />
+              <span>GitHub</span>
+            </a>
+          </li>
         </ul>
       </div>
 

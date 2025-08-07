@@ -7,9 +7,10 @@ const SvgPythonLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    width={props.width || 80}
-    height={props.height || 80}
+    width={props.width || 70}
+    height={props.height || 70}
     viewBox="0.21 -0.077 110 110"
+    className={props.className || ""}
     {...props}
   >
     <linearGradient

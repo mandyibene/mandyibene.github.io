@@ -40,7 +40,11 @@ body {
   --animate-cross-to-burger-1: reverse-wiggle-rotate .5s forwards;
   --animate-burger-to-cross-2: wiggle-rotate-counter-clockwise .5s forwards;
   --animate-cross-to-burger-2: reverse-wiggle-rotate-counter-clockwise .5s forwards;
-  
+
+  /* animations for typewriting effect */
+  --animate-typewriter: 3s typewriter steps(16) forwards;
+  --animate-caret: blink 1s infinite;
+
   @keyframes wiggle-rotate {
     0%{ transform: rotate(0deg); };
     50% { transform: rotate(55deg); };
@@ -64,4 +68,18 @@ body {
     50% { transform: rotate(10deg); };
     100% { transform: rotate(0deg); };
   }
+
+  @keyframes typewriter {
+    0%{ width: 0%; }
+    100%{ width: 100%; }
+  }
+
+  @keyframes blink {
+    0%{ background-color: transparent; }
+    0.1%{ background-color: currentColor; }
+    50%{ background-color: currentColor; }
+    50.1%{ background-color: transparent; }
+    100%{ background-color: transparent; }
+  }
+
 }

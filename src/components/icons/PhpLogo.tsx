@@ -7,9 +7,10 @@ const SvgPhpLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    width={props.width || 80}
-    height={props.height || 80}
+    width={props.width || 70}
+    height={props.height || 70}
     viewBox="0 0 711.201 383.598"
+    className={props.className || ""}
     {...props}
   >
     <defs>

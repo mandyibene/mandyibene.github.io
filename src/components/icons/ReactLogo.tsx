@@ -6,10 +6,11 @@ import type { SVGProps } from "react";
 const SvgReactLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={props.width || 80}
-    height={props.height || 80}
-    fill={props.fill || `black`}
+    width={props.width || 70}
+    height={props.height || 70}
+    fill="none"
     viewBox="0 0 362 313"
+    className={props.className || ""}
     {...props}
   >
     <path
