@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+
+  /* responsive */
+  --breakpoint-3xl: 112rem;
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xs: 20rem;
+
+
+  /* animations for burger icon */
+  --animate-burger-to-cross-1: wiggle-rotate .5s forwards;
+  --animate-cross-to-burger-1: reverse-wiggle-rotate .5s forwards;
+  --animate-burger-to-cross-2: wiggle-rotate-counter-clockwise .5s forwards;
+  --animate-cross-to-burger-2: reverse-wiggle-rotate-counter-clockwise .5s forwards;
+
+  /* animations for typewriting effect */
+  --animate-typewriter: 3s typewriter steps(16) forwards;
+  --animate-caret: blink 1s infinite;
+
+  @keyframes wiggle-rotate {
+    0%{ transform: rotate(0deg); };
+    50% { transform: rotate(55deg); };
+    100% { transform: rotate(45deg); };
+  }
+
+  @keyframes reverse-wiggle-rotate {
+    0%{ transform: rotate(45deg); };
+    50% { transform: rotate(-10deg); };
+    100% { transform: rotate(0deg); };
+  }
+
+  @keyframes wiggle-rotate-counter-clockwise {
+    0%{ transform: rotate(0deg); };
+    50% { transform: rotate(-55deg); };
+    100% { transform: rotate(-45deg); };
+  }
+
+  @keyframes reverse-wiggle-rotate-counter-clockwise {
+    0%{ transform: rotate(-45deg); };
+    50% { transform: rotate(10deg); };
+    100% { transform: rotate(0deg); };
+  }
+
+  @keyframes typewriter {
+    0%{ width: 0%; }
+    100%{ width: 100%; }
+  }
+
+  @keyframes blink {
+    0%{ background-color: transparent; }
+    0.1%{ background-color: currentColor; }
+    50%{ background-color: currentColor; }
+    50.1%{ background-color: transparent; }
+    100%{ background-color: transparent; }
+  }
+
+}

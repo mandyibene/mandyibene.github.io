@@ -1,0 +1,11 @@
+{
+  "typescript": true,
+  "removeViewBox": false,
+  "replaceAttrValues": {
+  },
+  "svgProps": {
+    "width": "{props.width || 70}",
+    "height": "{props.height || 70}",
+    "className" : "{props.className || \"\"}"
+  }
+}
