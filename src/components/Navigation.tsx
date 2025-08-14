@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import BurgerCrossButton from "./BurgerCrossButton";
-import { useContext, useEffect, useState } from "react";
-import { textColors, bgColors, hoverTextColors, hoverBgColors } from "@/constants/Colors";
+import { useContext, useState } from "react";
+import { textColors, hoverTextColors, hoverBgColors } from "@/constants/Colors";
 import { ThemeContext, ThemeContextType } from "@/app/context/themeContext";
 import { GithubLogo, LinkedinLogo } from "./icons";
 
@@ -16,14 +15,10 @@ function Navigation() {
 
   const toggleMenu = (): void => {
     setIsMenuClosed(!isMenuClosed);
-    !clickedOnce && setClickedOnce(!clickedOnce);
+    if (!clickedOnce) {
+      setClickedOnce(!clickedOnce);
+    }
   }
-
-  // const links: { [key: string]: string } = {
-  //   link1: "Lien 1",
-  //   link2: "Lien 2",
-  //   link3: "Lien 3"
-  // }
   
   const color1 = "zinc800";
   const color2 = "stone50";
@@ -49,11 +44,6 @@ function Navigation() {
       
       <div className={ulWrapperClassName}>
         <ul className={ulClassName}>
-          {/* {Object.keys(links).map((key, i) => (
-            <li className={liClassName} key={i}>
-              <Link className={linkClassName} href={key}>{links[key]}</Link>
-            </li>
-          ))} */}
           <li className={liClassName}>
             <a href="https://linkedin.com/in/mandy-ibene" target="_blank" className={`flex flex-row gap-2 items-center ${linkClassName}`}>
               <LinkedinLogo className={logoClassName} width={logoSize} height={logoSize}  />
