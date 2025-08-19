@@ -25,7 +25,7 @@ export default function Home() {
 
   const h1ClassName = `static mt-12 text-center text-3xl xs:text-5xl md:text-7xl xl:text-8xl font-semibold`;
 
-  const imagesClassName = "w-auto h-auto mt-8 rounded-xs border-1 border-stone-200"
+  // const imagesClassName = "w-auto h-auto mt-8 rounded-xs border-1 border-stone-200"
   
 
   return (
