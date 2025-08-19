@@ -3,16 +3,27 @@
 // Do not edit
 import * as React from "react";
 import type { SVGProps } from "react";
-const SvgNodejsLogo = (props: SVGProps<SVGSVGElement>) => (
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgNodejsLogo = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 70}
     height={props.height || 70}
     fill="none"
     viewBox="0 0 277 314"
+    role="img"
     className={props.className || ""}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <path
       fill="#5FA04E"
       d="M138.502 314c-4.301 0-8.317-1.154-12.044-3.174L88.32 288.037c-5.735-3.173-2.868-4.326-1.147-4.903 7.743-2.597 9.176-3.174 17.205-7.789.86-.577 2.008-.289 2.868.287l29.249 17.598c1.147.577 2.58.577 3.44 0l114.418-66.637c1.139-.577 1.724-1.731 1.724-3.172V90.436c0-1.444-.585-2.597-1.724-3.174L139.935 20.914c-1.146-.577-2.581-.577-3.44 0L22.08 87.262c-1.148.577-1.72 2.02-1.72 3.174V223.42c0 1.153.572 2.595 1.72 3.172l31.256 18.173c16.919 8.655 27.529-1.441 27.529-11.538V101.973c0-1.73 1.432-3.46 3.44-3.46H98.93c1.72 0 3.441 1.442 3.441 3.46v131.255c0 22.788-12.33 36.058-33.837 36.058-6.595 0-11.757 0-26.382-7.212l-30.11-17.308C4.589 240.44 0 232.362 0 223.708V90.723c0-8.653 4.588-16.73 12.043-21.057L126.458 3.03c7.169-4.04 16.918-4.04 24.087 0l114.42 66.636C272.414 73.993 277 82.07 277 90.723v132.985c0 8.654-4.586 16.732-12.035 21.058l-114.42 66.637c-3.441 1.443-7.741 2.597-12.043 2.597"

@@ -3,16 +3,27 @@
 // Do not edit
 import * as React from "react";
 import type { SVGProps } from "react";
-const SvgPhpLogo = (props: SVGProps<SVGSVGElement>) => (
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgPhpLogo = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     width={props.width || 70}
     height={props.height || 70}
     viewBox="0 0 711.201 383.598"
+    role="img"
     className={props.className || ""}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <defs>
       <clipPath id="php-logo_svg__a" clipPathUnits="userSpaceOnUse">
         <path d="M11.52 162C11.52 81.677 135.307 16.561 288 16.561S564.481 81.677 564.481 162 440.693 307.439 288 307.439 11.52 242.322 11.52 162" />

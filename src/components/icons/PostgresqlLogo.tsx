@@ -3,16 +3,27 @@
 // Do not edit
 import * as React from "react";
 import type { SVGProps } from "react";
-const SvgPostgresqlLogo = (props: SVGProps<SVGSVGElement>) => (
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgPostgresqlLogo = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     width={props.width || 70}
     height={props.height || 70}
     viewBox="0 0 432.071 445.383"
+    role="img"
     className={props.className || ""}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <g
       style={{
         fillRule: "nonzero",

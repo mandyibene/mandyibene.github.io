@@ -3,16 +3,27 @@
 // Do not edit
 import * as React from "react";
 import type { SVGProps } from "react";
-const SvgNextjsLogo = (props: SVGProps<SVGSVGElement>) => (
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgNextjsLogo = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 70}
     height={props.height || 70}
     fill="none"
     viewBox="0 0 314 314"
+    role="img"
     className={props.className || ""}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <mask
       id="nextjs-logo_svg__a"
       width={314}

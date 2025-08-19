@@ -3,16 +3,27 @@
 // Do not edit
 import * as React from "react";
 import type { SVGProps } from "react";
-const SvgSymfonyLogo = (props: SVGProps<SVGSVGElement>) => (
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgSymfonyLogo = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 70}
     height={props.height || 70}
     preserveAspectRatio="xMinYMin meet"
     viewBox="0 0 256 257"
+    role="img"
     className={props.className || ""}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <circle cx={128} cy={128.827} r={128} fill="#1A171B" />
     <path
       fill="#FFF"

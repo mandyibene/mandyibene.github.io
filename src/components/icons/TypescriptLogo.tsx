@@ -3,16 +3,27 @@
 // Do not edit
 import * as React from "react";
 import type { SVGProps } from "react";
-const SvgTypescriptLogo = (props: SVGProps<SVGSVGElement>) => (
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgTypescriptLogo = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 70}
     height={props.height || 70}
     fill="none"
     viewBox="0 0 314 314"
+    role="img"
     className={props.className || ""}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <path
       fill="#3178C6"
       d="M283.336 0H30.664C13.73 0 0 13.729 0 30.664v252.672C0 300.271 13.729 314 30.664 314h252.672C300.271 314 314 300.271 314 283.336V30.664C314 13.73 300.271 0 283.336 0"

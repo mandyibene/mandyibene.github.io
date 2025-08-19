@@ -3,15 +3,26 @@
 // Do not edit
 import * as React from "react";
 import type { SVGProps } from "react";
-const SvgBootstrapLogo = (props: SVGProps<SVGSVGElement>) => (
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgBootstrapLogo = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 70}
     height={props.height || 70}
     viewBox="0 0 512 408"
+    role="img"
     className={props.className || ""}
+    aria-labelledby={titleId}
     {...props}
   >
+    {title ? <title id={titleId}>{title}</title> : null}
     <defs>
       <linearGradient
         id="bootstrap-logo_svg__a"
