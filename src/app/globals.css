@@ -83,3 +83,7 @@ body {
   }
 
 }
+
+img {
+  color: inherit;
+}
