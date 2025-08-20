@@ -24,10 +24,7 @@ export default function Home() {
   
   const ref1 = useRef<HTMLHeadingElement>(null);
 
-  const h1ClassName = `static mt-12 text-center text-3xl xs:text-5xl md:text-7xl xl:text-8xl font-semibold`;
-
-  // const imagesClassName = "w-auto h-auto mt-8 rounded-xs border-1 border-stone-200"
-  
+  const h1ClassName = `static mt-12 text-center text-3xl xs:text-5xl md:text-7xl xl:text-8xl font-semibold`;  
 
   return (
     <main className="relative top-O w-full flex flex-col items-center">
@@ -78,7 +75,7 @@ export default function Home() {
       <Section className="flex-col 2xl:flex-row">
         <div className="flex-2 flex flex-col">
           <h3 className="xs:text-4xl 3xl:text-5xl mb-12 self-center">Gère Ton École</h3>
-          <img src={`${basePath}/gte-logo.png`} alt="Logo Gère Ton École" className="w-[150px] 2xl:w-[150px] h-auto self-center mb-16" />
+          <Image src={`${basePath}/gte-logo.png`} alt="Logo Gère Ton École" width="0" height="0" className="w-[150px] 2xl:w-[150px] h-auto self-center mb-16" />
         </div>
         <div className="flex-3 h-full 2xl:ps-24">
           <a href="https://geretonecole.fr/" target="_blank" className="underline font-bold">geretonecole.fr</a>
