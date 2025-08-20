@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import { BootstrapLogo, CssLogo, GithubLogo, GitLogo, HtmlLogo, JavascriptLogo, MysqlLogo, NextjsLogo, NodejsLogo, PhpLogo, PostgresqlLogo, PythonLogo, ReactLogo, SqlLogo, SymfonyLogo, TailwindLogo, TypescriptLogo } from "@/components/icons";
 import SkillCategory from "@/components/SkillCategory";
 import Image from "next/image";
+import { basePath } from "@/lib/config";
 
 export default function Home() {
 
@@ -77,17 +78,13 @@ export default function Home() {
       <Section className="flex-col 2xl:flex-row">
         <div className="flex-2 flex flex-col">
           <h3 className="xs:text-4xl 3xl:text-5xl mb-12 self-center">Gère Ton École</h3>
-          <Image src="/gte-logo.png" alt="Logo Gère Ton École" width="0" height="0" className="w-[150px] 2xl:w-[150px] h-auto self-center mb-16" />
+          <img src={`${basePath}/gte-logo.png`} alt="Logo Gère Ton École" className="w-[150px] 2xl:w-[150px] h-auto self-center mb-16" />
         </div>
         <div className="flex-3 h-full 2xl:ps-24">
           <a href="https://geretonecole.fr/" target="_blank" className="underline font-bold">geretonecole.fr</a>
           <div className="mt-8">
             {`Gère Ton École est une application web dédiée aux différents acteurs de la vie scolaire. Elle a pour vocation d’apporter une solution de suivi et de gestion simple, gratuite et adaptée pour tous les types d'établissements, allant de l’école primaire à l’université.`}
           </div>
-          {/* <Image src="/gte-screenshot-teacher-calendar.png" alt="capture d'écran Gère Ton École emplois du temps" width="0" height="0" className={imagesClassName} />
-          <Image src="/gte-screenshot-teacher-scores-entry.png" alt="capture d'écran Gère Ton École saisie des notes" width="0" height="0" className={imagesClassName} />
-          <Image src="/gte-screenshot-teacher-absence-entry.png" alt="capture d'écran Gère Ton École émargement" width="0" height="0" className={imagesClassName} />
-          <Image src="/gte-screenshot-admin-user-index.png" alt="capture d'écran Gère Ton École gestion des utilisateurs " width="0" height="0" className={imagesClassName} /> */}
         </div>
       </Section>
       
