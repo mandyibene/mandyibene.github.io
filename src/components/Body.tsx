@@ -3,6 +3,7 @@
 import { useContext } from "react";
 import Header from "./Header";
 import { ThemeContext, ThemeContextType } from "@/app/context/themeContext";
+import { colors } from "@/constants";
 
 export default function Body({
   children,
@@ -14,7 +15,7 @@ export default function Body({
 
   return (
     
-    <body className={`${darkMode && 'dark'} pt-[140px] transition-colors duration-200 text-zinc-800 dark:text-stone-50 bg-stone-50 dark:bg-zinc-900 `}>
+    <body className={`${darkMode && 'dark'} pt-[140px] transition-colors duration-200 ${colors.contrast.text} ${colors.base.darkText} ${colors.base.bg} ${colors.strong.darkBg}`}>
       <Header />
       {children}
     </body>

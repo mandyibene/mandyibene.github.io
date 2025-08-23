@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run generate:safelist && next dev",
+    "build": "npm run generate:safelist && next build",
     "start": "next start",
     "lint": "next lint",
-    "icons:create": "npx @svgr/cli --typescript --icon -d ./src/components/icons ./src/components/icons/source --config-file ./src/components/icons/svgr-config.json --template ./src/components/icons/svg-template.js"
+    "generate:safelist": "tsx scripts/tailwind-generate-safelist.ts",
+    "icons:create": "npx @svgr/cli --typescript --icon -d ./src/components/icons ./assets/icons-src --config-file ./scripts/svgr-config.json --template ./scripts/templates/svg-template.js"
   },
   "dependencies": {
     "next": "15.3.0",
@@ -24,6 +25,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
     "tailwindcss": "^4",
+    "tsx": "^4.20.4",
     "typescript": "^5"
   }
 }

@@ -1,0 +1,48 @@
+import { generateVariants } from "@/app/utils";
+
+const baseColors = {
+  base: "stone-50",
+  contrast: "zinc-800",
+  muted: "zinc-500",
+  strong: "zinc-900",
+} as const;
+
+export const colors = {
+  base: generateVariants(baseColors.base, [
+    "text",
+    "hover:text",
+    "dark:text",
+    "bg",
+    "dark:bg",
+    "hover:bg",
+    "dark:hover:bg",
+    "fill",
+    "dark:fill",
+    "group-hover:fill",
+    "checked:bg",
+    "peer-checked:border",
+  ]),
+
+  contrast: generateVariants(baseColors.contrast, [
+    "bg",
+    "hover:bg",
+    "dark:hover:bg",
+    "fill",
+  ]),
+
+  muted: generateVariants(baseColors.muted, [
+    "text",
+  ]),
+
+  strong: generateVariants(baseColors.strong, [
+    "bg",
+    "dark:hover:text",
+    "dark:bg",
+    "peer-checked:bg",
+    "border",
+    "peer-checked:border",
+    "fill",
+    "group-hover:fill",
+    "dark:group-hover:fill",
+  ]),
+};

@@ -6,6 +6,7 @@ import { BootstrapLogo, CssLogo, GithubLogo, GitLogo, HtmlLogo, JavascriptLogo, 
 import SkillCategory from "@/components/SkillCategory";
 import Image from "next/image";
 import { basePath } from "@/lib/config";
+import { colors } from "@/constants";
 
 export default function Home() {
 
@@ -59,12 +60,12 @@ export default function Home() {
         </SkillCategory>
         <SkillCategory name="SQL" description="Databases Management">
           <SqlLogo title="SQL" />
-          <MysqlLogo title="MySQL" className="fill-stone-50" />
+          <MysqlLogo title="MySQL" className={`${colors.base.fill}`} />
           <PostgresqlLogo title="PostgreSQL" />
         </SkillCategory>
         <SkillCategory name="Git" description="Gestion de versions">
           <GitLogo title="Git" />
-          <GithubLogo title="Github" className="fill-stone-50" />
+          <GithubLogo title="Github" className={`${colors.base.fill}`} />
         </SkillCategory>
         <SkillCategory name="Other Skills" description="" marginBottom="0">
           <PythonLogo title="Python" />

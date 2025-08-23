@@ -20,7 +20,7 @@ export default function Section({ contrast, className, children }: SectionProps)
       w-full lg:w-5/6 2xl:w-3/4
       lg:mb-8 p-8 xs:p-16 xl:p-28 
       lg:rounded-sm 
-      ${contrast && "bg-zinc-800 dark:bg-zinc-800"} 
+      ${contrast && "bg-zinc-800"} 
       text-xl 
       ${!darkMode && !contrast ? "text-zinc-800" : "text-stone-50"}
       `}
