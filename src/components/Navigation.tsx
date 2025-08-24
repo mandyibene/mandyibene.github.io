@@ -62,7 +62,7 @@ function Navigation() {
       {/* dark mode toggler */}
       <div className="relative w-16 h-8 mb-1 me-20 lg:me-0 self-center">
         <input defaultChecked={darkMode} id="switch-component" type="checkbox" onChange={toggleDarkMode} className="peer appearance-none w-16 h-8 bg-zinc-900 rounded-full checked:bg-stone-50 cursor-pointer transition-colors duration-300" />
-        <label htmlFor="switch-component" className={`absolute top-0 left-0 w-8 h-8 rounded-full border-2 ${colors.strong.border} shadow-sm transition-transform duration-300 ${colors.base.bg} ${colors.strong.peerCheckedBg} ${colors.base.peerCheckedBorder} peer-checked:translate-x-8 cursor-pointer`}></label>
+        <label htmlFor="switch-component" className={`absolute top-0 left-0 w-8 h-8 rounded-full border-3 ${colors.strong.border} shadow-sm transition-transform duration-300 ${colors.base.bg} ${colors.strong.peerCheckedBg} ${colors.base.peerCheckedBorder} peer-checked:translate-x-8 cursor-pointer`}></label>
       </div>
 
       {/* burger button */}

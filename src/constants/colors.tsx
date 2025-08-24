@@ -2,6 +2,7 @@ import { generateVariants } from "@/app/utils";
 
 const baseColors = {
   base: "stone-50",
+  subtle: "stone-400",
   contrast: "zinc-800",
   muted: "zinc-500",
   strong: "zinc-900",
@@ -28,6 +29,10 @@ export const colors = {
     "hover:bg",
     "dark:hover:bg",
     "fill",
+  ]),
+
+  subtle: generateVariants(baseColors.subtle, [
+    "text",
   ]),
 
   muted: generateVariants(baseColors.muted, [

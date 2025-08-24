@@ -1,29 +1,38 @@
 "use client";
 
+import { colors } from "@/constants";
 import { Children, cloneElement, isValidElement } from "react";
 
 interface SkillCategoryProps extends React.PropsWithChildren {
   name: string;
   description: string;
-  marginBottom?: string;
+  className?: string;
 }
 
-export default function SkillCategory({ name, description, marginBottom= "mb-20", children }: SkillCategoryProps) {
+export default function SkillCategory({ name, description, className= "mb-20", children }: SkillCategoryProps) {
 
   // adding size of logos here so I don't have to add it myself on each of them
   const styledChildren = Children.map(children, child  => {
     if (isValidElement<{ className: any }>(child)) {
-      return cloneElement(child, {className: `${child.props.className} size-[50px] sm:size-[60px] md:size-[80px] 3xl:size-[70px]`})
+      return cloneElement(child, {className: `${child.props.className} size-[40px] sm:size-[50px] xl:size-[60px]`})
     }
   })
 
   return (
-    <div className={`flex flex-col 3xl:flex-row justify-between gap-16 w-full ${marginBottom}`}>
-      <div className="flex flex-col 3xl:w-1/2">
-        <span className="text-2xl sm:text-4xl text-stone-50 mb-4">{`> ${name}`}</span>
-        <span className="text-lg sm:text-2xl text-stone-400">{description}</span>
+    <div className={`
+      flex flex-col xl:flex-row justify-between gap-6 xl:gap-12
+      w-full 
+      ${className}
+      `}
+    >
+      {/* names and description */}
+      <div className="flex flex-col">
+        <h3 className={`mb-4 text-xl md:text-2xl lg:text-3xl ${colors.base.text}`}>{name}</h3>
+        <span className={`text-lg md:text-xl lg:text-2xl ${colors.subtle.text}`}>{description}</span>
       </div>
-      <div className="flex flex-row justify-center sm:justify-start 3xl:justify-end gap-3 sm:gap-12 3xl:w-1/2">
+
+      {/* logos */}
+      <div className="flex flex-row xl:justify-end gap-6 xl:gap-12">
         {styledChildren}
       </div>
     </div>
