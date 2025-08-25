@@ -1,15 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Section from "@/components/Section";
+import { useEffect, useState } from "react";
 import { BootstrapLogo, CssLogo, GithubLogo, GitLogo, HtmlLogo, JavascriptLogo, MysqlLogo, NextjsLogo, NodejsLogo, PhpLogo, PostgresqlLogo, PythonLogo, ReactLogo, SqlLogo, SymfonyLogo, TailwindLogo, TypescriptLogo } from "@/components/icons";
 import SkillCategory from "@/components/SkillCategory";
 import Image from "next/image";
 import { basePath } from "@/lib/config";
 import { colors } from "@/constants";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid";
+import { useAppearOnScroll } from "./hooks/animations";
+import { useSectionsRefs } from "./hooks/context";
+import { Section } from "@/components/Section";
 
 export default function Home() {
+
+  const [jobSpan, setJobSpan] = useState("> ");
+  const job = "Développeuse Web";
+
+  // Animations for sections
+  const {ref: refSkillsSection, animationClass: skillsSectionAnimation} = useAppearOnScroll<HTMLElement>();
+  const {ref: refProjectsSection, animationClass: projectsSectionAnimation} = useAppearOnScroll<HTMLElement>();
 
   useEffect(() => {
     let index = 0;
@@ -19,18 +28,20 @@ export default function Home() {
           setJobSpan((prevState) => prevState + letter);
         }, index*200);
     }
-  }, [])
+  }, [job])
 
-  const [jobSpan, setJobSpan] = useState("> ");
-  const job = "Développeuse Web"
-  
-  const ref1 = useRef<HTMLHeadingElement>(null);
+  // Register dark sections so elements in header can contrast
+  const { registerSections } = useSectionsRefs();
+
+  useEffect(() => {
+    if (refSkillsSection.current) registerSections(refSkillsSection);
+  }, [registerSections]);
 
   return (
     <main className="relative top-O w-full flex flex-col items-center">
       {/* quick intro */}
       <Section className="items-center mb-12">
-        <h1 ref={ref1} className={`static mt-12 text-center text-4xl md:text-6xl xl:text-7xl font-semibold`}>Mandy Ibéné</h1>
+        <h1 className={`static mt-12 text-center text-4xl md:text-6xl xl:text-7xl font-semibold`}>Mandy Ibéné</h1>
 
         <div className="flex flex-row h-[1.75rem] md:h-[2.25rem] mt-6 md:mt-12">
           <h2 className="text-2xl md:text-4xl">{jobSpan}</h2>
@@ -39,7 +50,7 @@ export default function Home() {
       </Section>
 
       {/* skills */}
-      <Section contrast title="Compétences">
+      <Section ref={refSkillsSection} animate={skillsSectionAnimation} contrast title="Compétences">
         <SkillCategory name="HTML & CSS" description="Web Design Responsive">
           <HtmlLogo title="HTML" fill="white" />
           <CssLogo title="CSS" fill="white" />
@@ -72,9 +83,9 @@ export default function Home() {
       </Section>
       
       {/* projects */}
-      <Section title="Projets" className="flex-col xl:flex-row">
+      <Section ref={refProjectsSection} animate={projectsSectionAnimation} title="Projets" className="flex-col xl:flex-row">
         <div className="flex-2 flex">
-          <Image src={`${basePath}/gte-home-screenshot.png`} alt="Logo Gère Ton École" width="0" height="0" className="self-center w-full xl:max-w-[500px] h-auto mb-6 xl:mb-0 rounded-sm" />
+          <Image src={`${basePath}/gte-home-screenshot.png`} alt="Logo Gère Ton École" width="0" height="0" className="self-start w-full xl:max-w-[500px] h-auto mb-6 xl:mb-0 rounded-sm" />
         </div>
         
         <div className="flex-3 h-full xl:ps-12">

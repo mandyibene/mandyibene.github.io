@@ -1,9 +1,8 @@
 "use client";
 
-import { useContext } from "react";
 import Header from "./Header";
-import { ThemeContext, ThemeContextType } from "@/app/context/themeContext";
 import { colors } from "@/constants";
+import { useThemeContext } from "@/app/hooks/context";
 
 export default function Body({
   children,
@@ -11,7 +10,7 @@ export default function Body({
   children: React.ReactNode;
 }>) {
 
-  const { darkMode } = useContext(ThemeContext) as ThemeContextType;
+  const { darkMode } = useThemeContext();
 
   return (
     

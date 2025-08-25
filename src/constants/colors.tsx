@@ -17,10 +17,12 @@ export const colors = {
     "dark:bg",
     "hover:bg",
     "dark:hover:bg",
+    "checked:bg",
+    "border",
+    "checked:border",
     "fill",
     "dark:fill",
     "group-hover:fill",
-    "checked:bg",
     "peer-checked:border",
   ]),
 
@@ -40,6 +42,7 @@ export const colors = {
   ]),
 
   strong: generateVariants(baseColors.strong, [
+    "text",
     "bg",
     "dark:hover:text",
     "dark:bg",

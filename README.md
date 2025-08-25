@@ -54,7 +54,8 @@ The design will be simple but I will make it user friendly, appealing and intera
   - [x] images and simple styling for projects
 - **homepage pt.3 : adding movement and interactivity**
   - [x] light/dark mode
-  - [ ] sections fading in when scrolling
+  - [x] sections fading in when scrolling
+  - [x] navbar elements changing colors when overlapping with dark background
   - [ ] scrollbar with jump-to section??
   - [ ] logo maybe
   - [ ] others??

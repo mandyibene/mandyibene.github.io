@@ -13,6 +13,7 @@ type Prefix =
   | "group-hover:fill"
   | "dark:group-hover:fill"
   | "checked:bg"
+  | "checked:border"
   | "peer-checked:border"
   | "peer-checked:bg"
   | "border"

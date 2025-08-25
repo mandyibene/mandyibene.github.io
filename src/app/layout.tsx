@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-// import { jetBrainsMono } from "@/constants";
 import "./globals.css";
 import Body from "@/components/Body";
 import { ThemeContextProvider } from "./context/themeContext";
+import { SectionsRefsProvider } from "./context/sectionsRefsContext";
 
 export const metadata: Metadata = {
   title: "Développeuse Web | Mandy Ibéné",
@@ -24,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${jetBrainsMono.className}`}>
       <ThemeContextProvider>
-        <Body>
-          {children}
-        </Body>
+        <SectionsRefsProvider>
+          <Body>
+            {children}
+          </Body>
+        </SectionsRefsProvider>
       </ThemeContextProvider>
     </html>
   );
