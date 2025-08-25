@@ -85,7 +85,7 @@ export default function Home() {
       {/* projects */}
       <Section ref={refProjectsSection} animate={projectsSectionAnimation} title="Projets" className="flex-col xl:flex-row">
         <div className="flex-2 flex">
-          <Image src={`${basePath}/gte-home-screenshot.png`} alt="Logo Gère Ton École" width="0" height="0" className="self-start w-full xl:max-w-[500px] h-auto mb-6 xl:mb-0 rounded-sm" />
+          <Image src={`${basePath}/assets/images/gte-home-screenshot.png`} alt="Miniature Gère Ton École" width="0" height="0" className="self-start w-full xl:max-w-[500px] h-auto mb-6 xl:mb-0 rounded-sm" />
         </div>
         
         <div className="flex-3 h-full xl:ps-12">

@@ -59,3 +59,8 @@ The design will be simple but I will make it user friendly, appealing and intera
   - [ ] scrollbar with jump-to section??
   - [ ] logo maybe
   - [ ] others??
+- **seo**
+  - [x] structure data in template.tsx
+  - [x] Open Graph and Twitter cards in metadata
+  - [x] robots.txt and template.xml in public folder
+  - [x] Google Search Console for visibility
